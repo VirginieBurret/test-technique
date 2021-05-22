@@ -1,0 +1,56 @@
+/* .ground {
+    height: 500px;
+    width: 500px;
+    background-color: lightblue;
+} */
+
+.app {
+  background-image: url("https://i.pinimg.com/originals/2f/99/bf/2f99bfc0ac6d02db55e307d676168af2.gif");
+  height: 100vh;
+  width: 100vw;
+  padding: 3rem;
+}
+
+.command {
+  text-align: center;
+  height: 5rem;
+}
+.robot {
+  height: 50px;
+  width: 50px;
+  border: solid vlack 1px;
+  border-radius: 50%;
+
+  position: absolute;
+  text-align: center;
+  z-index: 999;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mars {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  list-style: none;
+  max-width: 350px;
+  margin: 40px auto;
+  padding: 0;
+  padding: 3rem;
+}
+
+.square {
+  position: relative;
+  display: grid;
+  border-radius: 5px;
+  align-items: center;
+  justify-items: center;
+  background-color: purple;
+  transition: background 0.2s;
+  min-height: 70px;
+}
