@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 const App = () => {
   const [inputValue, setInputValue] = useState("");
   const history = useHistory;
-  const cellSize = 70; // chaque case fera 30px
+  const cellSize = 70; // chaque case fera 70px
   // x absisse horizontale
   // y ordonee verticale
   const MOVE_VECTOR = {
