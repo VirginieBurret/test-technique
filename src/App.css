@@ -14,7 +14,31 @@
 .command {
   text-align: center;
   height: 5rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
+
+.firstInput {
+  height: 3rem;
+}
+
+.path {
+  margin-right: 10px;
+  height: 2rem;
+}
+
+.send {
+  margin: 5px;
+  height: 3rem;
+  border: none;
+  color: white;
+  font-weight: bold;
+  background-color: purple;
+  border-radius: 5px;
+}
+
 .robot {
   height: 50px;
   width: 50px;

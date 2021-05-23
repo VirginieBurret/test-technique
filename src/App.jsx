@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import gsap from "gsap";
 import { Timeline } from "gsap/gsap-core";
 import { useHistory } from "react-router-dom";
+import Vessel from "./Components/Vessel";
 
 const App = () => {
   const [inputValue, setInputValue] = useState("");
@@ -19,7 +20,6 @@ const App = () => {
   };
 
   const ORIENTATION_ANGLE = {
-    // vector movement qui a un point de depart et point darrivee
     S: 180, // aller vers le bas
     W: -90, // aller vers la gauche
     N: 0, // aller vers le haut
@@ -47,6 +47,8 @@ const App = () => {
     move: function () {
       this.x += MOVE_VECTOR[this.orientation].x;
       this.y += MOVE_VECTOR[this.orientation].y;
+      console.log("this.x", this.x);
+      console.log("this.y", this.y);
     },
 
     turnRight: function () {
@@ -122,62 +124,115 @@ const App = () => {
     <div className="app">
       <div className="wrapper">
         <div className="command">
-          <input
-            value={inputValue}
-            onChange={handleChange}
-            type="text"
-            className="parcours"
-          />
+          <div className="firstInput">
+            <input
+              placeholder="Why not try with RMMM"
+              value={inputValue}
+              onChange={handleChange}
+              type="text"
+              className="path"
+            />
 
-          <input
-            defaultValue="00N"
-            onChange={handleChange}
-            type="text"
-            className="parcours"
-          />
+            <button type="submit" onClick={sendCordinates} className="send">
+              ENVOYER
+            </button>
 
-          <button type="submit" onClick={sendCordinates} className="send">
-            ENVOYER
-          </button>
+            <button type="submit" onClick={resetInput} className="send">
+              RESET
+            </button>
+          </div>
 
-          <button type="submit" onClick={resetInput} className="send">
-            RESET
-          </button>
+          <div className="secondInput">
+            <input
+              placeholder="Why not try with RMMM"
+              defaultValue="00N"
+              onChange={handleChange}
+              type="text"
+              className="path"
+            />
+          </div>
         </div>
 
         <div id="ground" className="ground">
           <ul className="mars">
-            <div id="robot" className="robot">
-              <img
-                style={{ width: "3rem" }}
-                src={`${process.env.PUBLIC_URL}/rover.png`}
-              />
-            </div>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
-            <li className="square"></li>
+            <li id="0-4" className="square">
+              0-4
+            </li>
+            <li id="1-4" className="square">
+              1-4
+            </li>
+            <li id="2-4" className="square">
+              2-4
+            </li>
+            <li id="3-4" className="square">
+              3-4
+            </li>
+            <li id="4-4" className="square">
+              4-4
+            </li>
+            <li id="0-3" className="square">
+              0-3
+            </li>
+            <li id="1-3" className="square">
+              1-3
+            </li>
+            <li id="2-3" className="square">
+              2-3
+            </li>
+            <li id="3-3" className="square">
+              3-3
+            </li>
+            <li id="4-3" className="square">
+              4-3
+            </li>
+            <li id="0-2" className="square">
+              0-2
+            </li>
+            <li id="1-2" className="square">
+              1-2
+            </li>
+            <li id="2-2" className="square">
+              2-2
+            </li>
+            <li id="3-2" className="square">
+              3-2
+            </li>
+            <li id="4-2" className="square">
+              4-2
+            </li>
+            <li id="0-1" className="square">
+              0-1
+            </li>
+            <li id="1-1" className="square">
+              1-1
+            </li>
+            <li id="2-1" className="square">
+              2-1
+            </li>
+            <li id="3-1" className="square">
+              3-1
+            </li>
+            <li id="4-1" className="square">
+              4-1
+            </li>
+            <li id="0-0" className="square">
+              0-0
+              <div id="robot" className="robot">
+                <Vessel />
+              </div>
+            </li>
+            <li id="1-0" className="square">
+              1-0
+            </li>
+            <li id="2-0" className="square">
+              2-0
+            </li>
+            <li id="3-0" className="square">
+              3-0
+            </li>
+            <li id="4-0" className="square">
+              4-0
+            </li>
           </ul>
         </div>
       </div>
